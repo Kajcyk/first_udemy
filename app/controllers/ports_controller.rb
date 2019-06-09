@@ -18,10 +18,25 @@ class PortsController < ApplicationController
 	      end
     	end
  	 end
+
+ 	 def edit 
+ 	 	@port = Port.find(params[:id])
+ 	 end
+
+ 	 def update
+ 	 	@port = Port.find(params[:id])
+ 	 	respond_to do |format| 
+ 	 		if @port.update(port_params)
+ 	 			format.html {redirect_to ports_path, notice: 'The record succsesfully update.'}
+ 	 		else
+ 	 			format.html {render :edit}
+ 	 		end
+ 	 	end
+ 	 end
 end
 
 private
 
- def portfolio_params
+ def port_params
  	params.require(:port).permit(:title, :subtitle, :body, :main_image, :thumb_image)
  end
