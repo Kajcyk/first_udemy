@@ -33,6 +33,10 @@ class PortsController < ApplicationController
  	 		end
  	 	end
  	 end
+
+ 	 def show
+ 	 	@port = Port.find(params[:id])
+ 	 end
 end
 
 private
