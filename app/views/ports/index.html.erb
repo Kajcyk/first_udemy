@@ -3,7 +3,7 @@
 <%= link_to "Create New Item", new_port_path %>
 
 <% @ports.each do |port| %>
-	<p><%= link_to port.title, port_path(port) %></p>
+	<p><%= link_to port.title, port_show_path(port) %></p>
 	<p><%= port.subtitle %></p>
 	<p><%= port.body %></p>
 	<%= image_tag port.thumb_image unless port.thumb_image.nil? %>

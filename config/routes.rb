@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :ports
+  resources :ports, except: [:show]
+  get 'port/:id', to: 'ports#show', as: 'port_show'
+
   resources :skills
   resources :portfolios
   root to: 'pages#home'
