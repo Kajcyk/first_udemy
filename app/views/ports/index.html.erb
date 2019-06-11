@@ -1,0 +1,12 @@
+<h1>Portfolio Items</h1>
+
+<%= link_to "Create New Item", new_port_path %>
+
+<% @ports.each do |port| %>
+	<p><%= link_to port.title, port_show_path(port) %></p>
+	<p><%= port.subtitle %></p>
+	<p><%= port.body %></p>
+	<%= image_tag port.thumb_image unless port.thumb_image.nil? %>
+	<%= link_to "Edit", edit_port_path(port) %>
+	<%= link_to 'Delete Portfolio Item', port_path(port), method: :delete, data: {confirm: 'Are you sure?'} %>
+<% end %>
