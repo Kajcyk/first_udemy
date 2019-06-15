@@ -72,3 +72,10 @@ end
 
 puts "8 ports created"
 
+3.times do |technology|
+	Port.last.technologies.create!(
+		name: "Technology #{technology}"
+	)
+end
+
+puts "3 technologies item created"
