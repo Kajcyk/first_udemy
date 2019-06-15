@@ -1,6 +1,6 @@
 class PortsController < ApplicationController
 	def index
-		@ports = Port.all 
+		@ports = Port.angular
 	end
 
 	def new
