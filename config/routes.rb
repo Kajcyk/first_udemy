@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :ports, except: [:show]
   get 'port/:id', to: 'ports#show', as: 'port_show'
+  get 'port/:angular', to: 'ports#show'
 
   resources :skills
   resources :portfolios
