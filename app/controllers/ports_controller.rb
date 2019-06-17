@@ -9,6 +9,7 @@ class PortsController < ApplicationController
 
 	def new
 		@port = Port.new
+		3.times {@port.technologies.build }
 	end
 
 	def create
@@ -54,5 +55,5 @@ end
 private
 
  def port_params
- 	params.require(:port).permit(:title, :subtitle, :body, :main_image, :thumb_image)
+ 	params.require(:port).permit(:title, :subtitle, :body, :main_image, :thumb_image, technologies_attributes: [:name] )
  end
